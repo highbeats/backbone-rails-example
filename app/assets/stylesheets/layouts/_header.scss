@@ -1,0 +1,71 @@
+header#header{
+	position:relative;
+	height:46px;
+	width:100%;
+  background: #2f2f2f;
+  
+  h1{ 
+    margin-bottom:15px;
+		position:absolute;
+		left:35px;
+		top:10px;
+		
+		a{
+			float:left;
+		}
+  }
+  
+  ul.top_nav{
+    position: relative;
+    float: right;
+    right:50px;
+    list-style:none;
+
+    li{
+      display:inline;
+      margin-left:25px;
+      color:#FFF;
+      font-weight:bold;
+      @include text-shadow(#082252 0 1px 2px);
+
+      a{
+        font-size:0.91em;
+        text-decoration:none;
+        color:#FFF;
+        padding: 3px 10px 4px;
+        border: 1px solid transparent;
+      }
+
+      a:hover{
+        background:#666;
+        @include box-shadow(none);
+        @include border-radius(10px);
+      }
+    }
+
+    li.current{
+      background:#666;
+      padding:5px 10px;
+      font-size:0.9em;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    li.new_msg{
+      margin-left: 15px;
+
+      #msgBtn{
+        padding: 0;
+        border: none;
+        background: none !important;
+        @include box-shadow(none);
+
+        .ui-icon-mail-closed{
+          background: image-url('icons/groupchat.png') no-repeat center center;
+          height: 17px;
+          width: 26px;
+        }
+      }
+    }
+  }
+}

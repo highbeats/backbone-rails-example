@@ -1,0 +1,20 @@
+@import "compass/css3";
+.c-list {
+  width: 100%;
+  list-style:none;
+  padding-left: 0;
+
+  li {
+    display:inline-block;
+    vertical-align:top;
+    width: 217px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 16px;
+    border: 1px solid #ccc;
+  }
+
+  li:hover {
+    background: #fff;
+  }
+}

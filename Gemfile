@@ -20,12 +20,14 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'backbone-on-rails'
+gem 'eco'
 
 group :development, :test  do
   gem 'rspec-rails'
+  gem 'jasmine'
 end
 
 group :test do

@@ -1,0 +1,17 @@
+!!!5
+%html
+  = render partial: 'layouts/head'
+  %body
+    #loading{ style: 'display:none;' }
+    #container
+      %header#header.clearfix= render partial: 'layouts/header'
+      #navigation= render partial: 'layouts/navigation'
+      #main.clearfix
+        - if content_for?(:sidebar)
+          .content= yield
+          .sidebar= yield :sidebar
+        - else
+          = yield
+    %footer#footer.clearfix
+      = render partial: 'layouts/footer'
+    = render partial: 'layouts/javascripts'

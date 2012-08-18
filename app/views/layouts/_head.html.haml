@@ -1,0 +1,7 @@
+%head
+  %meta{ charset: 'utf-8' }
+  %title= @content_for_title || "apt2d"
+  -#%link{ href: 'images/favicon.ico', rel: 'short icon', type: 'image/x-icon' }
+
+  = render partial: 'layouts/stylesheets'
+  = csrf_meta_tag

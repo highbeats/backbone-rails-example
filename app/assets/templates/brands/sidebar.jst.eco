@@ -1,0 +1,12 @@
+<% if @brands.length: %>
+  <h3>Brands</h3>
+  <div class="block">
+  <ul>
+    <% for brand in @brands: %>
+      <li><a href="#"><%= brand.get "name" %></a></li>
+    <% end %>
+  </ul>
+  </div>
+<% else: %>
+  <h3>No brands found</h3>
+<% end %>
