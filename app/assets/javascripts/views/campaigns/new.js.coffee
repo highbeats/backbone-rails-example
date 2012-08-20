@@ -35,7 +35,7 @@ class Tapp.Views.CampaignsNew extends Backbone.View
         langs = $(select)
           .parent()
           .find(".country-languages")
-          .find(".language-select")
+          .find("select")
         _.each langs, (lang, i) ->
           langVal = $(lang).val()
           countries[name].push langVal if langVal.length
@@ -44,6 +44,6 @@ class Tapp.Views.CampaignsNew extends Backbone.View
       start_from_date: $(".datetime").first().val(),
       end_date: $(".datetime").last().val(),
       countries: JSON.stringify countries
-    if @collection.create attributes
+    if @collection.create(attributes, wait: true)
       alert("Success!")
 

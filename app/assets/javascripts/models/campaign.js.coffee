@@ -17,11 +17,12 @@ class Tapp.Models.Campaign extends Backbone.Model
 
   adoptCountriesList: =>
     countLangs = []
-    _.each @get("countries"), (langs, countryName) ->
-      obj =
-        country: countryName
-        languages: langs
-      countLangs.push obj
+    try
+      _.each @get("countries"), (langs, countryName) ->
+        obj =
+          country: countryName
+          languages: langs
+        countLangs.push obj
     countLangs
 
 
