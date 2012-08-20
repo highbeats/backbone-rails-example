@@ -1,16 +1,20 @@
-<h1>Listing Campaigns</h1>
-<a href="campaigns/new" class="button">New Campaign</a>
+<h1>Listing Campaigns <small><%= @campaigns.length %></small></h1>
+<a href="#campaigns/new" class="button">New Campaign</a>
 <% if @campaigns.length: %>
   <ul class="c-list">
     <% for campaign in @campaigns: %>
       <li>
         <div class="c-title">
-          <h4><%= campaign.brand.get("name") %> campaign </h3>
+          <small>Brand: <%= campaign.brand.get("name") %> campaign</small>
         </div>
         <div>
           <small>From:<%= campaign.get("start_from_date") %></small>
           <br/>
           <small>To: <%= campaign.get("end_date") %></small>
+        </div>
+        <div class="countries">
+          <small>Countries:
+          </small>
         </div>
       </li>
     <% end %>

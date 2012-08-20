@@ -3,7 +3,6 @@ class CompaniesController < ApplicationController
 
   def index
     respond_with @companies = Company.all
-    end
   end
 
   def show

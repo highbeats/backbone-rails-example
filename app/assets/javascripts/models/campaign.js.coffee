@@ -17,6 +17,3 @@ class Tapp.Models.Campaign extends Backbone.Model
 
   initialize: ->
     @brand()
-
-
-

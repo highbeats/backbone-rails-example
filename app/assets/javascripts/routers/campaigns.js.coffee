@@ -1,7 +1,7 @@
 class Tapp.Routers.Campaigns extends Backbone.Router
   routes:
-    "campaigns": "campaignsIndex"
-    "campaigns/new": "newCampaign"
+    "campaigns": "index"
+    "campaigns/new": "new"
 
   initialize: ->
     @layout = new Tapp.Views.CampaignsLayout
@@ -10,10 +10,10 @@ class Tapp.Routers.Campaigns extends Backbone.Router
     @campaigns.fetch()
     @brands.fetch()
 
-  campaignsIndex: ->
-    @layout.render()
+  index: ->
     @brandsSidebarView = new Tapp.Views.BrandsSidebar(collection: @brands)
-    @campaignsIndexView = new Tapp.Views.CampaignsIndex(collection: @campaigns)
+    @campaignsIndexView = new Tapp.Views.CampaignsIndex(collection: @campaigns, brands: @brands)
 
-  campaignNew: ->
-
+  new: ->
+    @newCampaignView = new Tapp.Views.CampaignsNew(el: $(".content"), brands: @brands, collection: @campaigns)
+    @newCampaignView.render()

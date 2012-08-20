@@ -9,5 +9,4 @@ class Tapp.Views.CampaignsIndex extends Backbone.View
   initialize: ->
     @setElement $(".content")
     @collection = @options.collection
-
     @render()

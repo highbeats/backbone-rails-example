@@ -6,12 +6,8 @@ window.Tapp =
 
   init: ->
     window.router = new Tapp.Routers.Campaigns()
-    Backbone.history.start(pushState: true)
-    $(document).on "click", "a", (e) ->
-      href = $(this).attr "href"
-      unless href is "/"
-        e.preventDefault()
-        Backbone.history.navigate(href, trigger: true)
+    new Tapp.Routers.Application()
+    Backbone.history.start()
 
 $ ->
   $("div#navigation ul.nav").on "click", "a", ->

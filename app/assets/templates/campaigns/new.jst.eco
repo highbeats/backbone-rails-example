@@ -1,2 +1,23 @@
-<form action="#" id="new_campaign">
+<h2>Create new campaign</h2>
+
+<form id="#new_campaign_form">
+
+  <label for="brand_id">Brand</label>
+  <select id="brand_id">
+    <option value selected="selected">Selct brand...</option>
+    <% for brand in @brands: %>
+      <option value="<%= brand.get("id") %>"><%= brand.get("name") %></option>
+    <% end %>
+  </select>
+  <br />
+  <label for="start_from_date">From</label>
+  <input class="datetime" id="start_from_date"><br/>
+  <label for="end_time">Upto</label>
+  <input class="datetime" id="end_date"><br/>
+
+  <div class="countries-languages"></div>
+  <div class="actions">
+    <a href="#" class="add-country">Add country</a><br/>
+    <input type="submit" value="Save" id="save_campaign">
+  </div>
 </form>
