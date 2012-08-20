@@ -26,5 +26,8 @@ When /^I submit new campaign form with valid data$/ do
     find("#end_date") {|date| fill_in(date, :with =>"29/09/2012")}
     find("#save_campaign").click
   end
+end
 
+Then /^I should see campaigns list$/ do
+  step %{I go to campaigns index}
 end

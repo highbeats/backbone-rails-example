@@ -3,7 +3,7 @@
 <% if @campaigns.length: %>
   <ul class="c-list">
     <% for campaign in @campaigns: %>
-      <li>
+      <li class="campaign-item widget" data-campaign_id="<%= campaign.id %>">
         <div class="c-title">
           <p>Brand: <%= campaign.brand.get("name") %> campaign</p>
         </div>
@@ -26,7 +26,7 @@
         </div>
       </li>
     <% end %>
+  </ul>
 <% else: %>
   <h1><%= @campaigns %></h1>
 <% end %>
-  </ul>

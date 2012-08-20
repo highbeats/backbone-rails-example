@@ -12,16 +12,18 @@
   </select>
   <br />
   <label for="start_from_date">From</label>
-  <input class="datetime" id="start_from_date"><br/>
+  <a href="#"><%= @campaign.get("start_from_date") %></a><br/>
+  <input class="datetime" id="start_from_date" style="display:none;"><br/>
   <label for="end_time">Upto </label>
-  <input class="datetime" id="end_date"><br/>
+  <a href="#"><%= @campaign.get("end_date") %></a>
+  <input class="datetime" id="end_date" style="display:none;"><br/>
   <div class="block">
     <a href="#" class="add-country" id="clb">Add country</a><br/>
   </div>
-  <div class="countries-languages block"> </div>
+  <a href="#">Edit countries and languages</a>
+  <div class="countries-languages block" style="display:none;"> </div>
 </div>
   <div class="actions">
-   
     <input type="submit" value="Save" id="save_campaign" class="button">
   </div>
 

@@ -2,6 +2,7 @@ class Tapp.Views.CampaignsNew extends Backbone.View
 
   template: JST['campaigns/new']
 
+
   events:
     "click .add-country": "addCountrySelector"
     "click #save_campaign": "saveCampaign"
@@ -15,8 +16,8 @@ class Tapp.Views.CampaignsNew extends Backbone.View
   initialize: ->
     @collection = @options.collection
     @brands = @options.brands
-    @countries = {}
-    @languages = []
+    @brands.on "all", @render, this
+    @router = @options.router
 
   addCountrySelector: ->
     selectCountriesView = new Tapp.Views.CampaignsCountries()
@@ -25,26 +26,14 @@ class Tapp.Views.CampaignsNew extends Backbone.View
     false
 
   saveCampaign: (e) ->
-    e.preventDefault()
-    selects = $('form').find('.country-selector')
-    countries = {}
-    _.each selects, (select, i) ->
-      name = $(select).val()
-      if name.length
-        countries[name] = []
-        langs = $(select)
-          .parent()
-          .find(".country-languages")
-          .find("select")
-        _.each langs, (lang, i) ->
-          langVal = $(lang).val()
-          countries[name].push langVal if langVal.length
+    form = @$("form")
+    countries = ViewsHelpers.serializeCountriesObject(form)
     attributes =
       brand_id: $("#brand_id").val(),
       start_from_date: $(".datetime").first().val(),
       end_date: $(".datetime").last().val(),
       countries: countries
     if @collection.create(attributes)
-      alert("Successfully created!")
+      @router.navigate "#campaigns", trigger: true
     else
       alert("There were errors!")

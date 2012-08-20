@@ -18,5 +18,5 @@ Feature: Campaigns
     Given brand exists with name: "Dell", id: 1
     And I am on the new campaign page
     When I submit new campaign form with valid data
-    Then I should see alert "Success!"
-    And a campaign should exist with brand_id: 1
+    Then I should see campaigns list
+    And the campaign should exist with brand_id: 1

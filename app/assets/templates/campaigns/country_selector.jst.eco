@@ -1,4 +1,5 @@
-<select class="country-selector">
+<label for="ccslc">Country Name</label>
+<select class="country-selector" id="ccslc">
     <option value="" selected="selected">Select Country</option>
     <option value="Afghanistan" data-alternative-spellings="AF افغانستان">Afghanistan</option>
     <option value="Åland Islands" data-alternative-spellings="AX Aaland Aland" data-relevancy-booster="0.5">Åland Islands</option>
@@ -249,7 +250,7 @@
     <option value="Yemen" data-alternative-spellings="YE اليمن">Yemen</option>
     <option value="Zambia" data-alternative-spellings="ZM">Zambia</option>
     <option value="Zimbabwe" data-alternative-spellings="ZW">Zimbabwe</option>
-</select><br/>
+</select>
+<a href="#" class="add-lang" id="lld">Add language</a>
+<div class="country-languages block" style="margin-left:157px;"></div>
 
-<div class="country-languages clearfix"></div>
-<a href="#" class="add-lang">Add language</a>
