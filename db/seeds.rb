@@ -16,5 +16,6 @@ countries = {
 3.times do |i|
   c = Company.create(name: "Company-#{i}", phone: (1..5).each_with_object("") {|n, a| a << n*i}, address: "#{i}street")
   b = c.brands.create(name: brandNames[i])
-  b.campaigns.create(start_from_date: Time.now, end_date: Time.now + 1.week, countries: countries.to_json)
+  cbc = b.campaigns.build(start_from_date: Time.now, end_date: Time.now + 1.week, countries: countries)
+  cbc.save!
 end

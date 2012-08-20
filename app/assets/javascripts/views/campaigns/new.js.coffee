@@ -43,7 +43,8 @@ class Tapp.Views.CampaignsNew extends Backbone.View
       brand_id: $("#brand_id").val(),
       start_from_date: $(".datetime").first().val(),
       end_date: $(".datetime").last().val(),
-      countries: JSON.stringify countries
-    if @collection.create(attributes, wait: true)
-      alert("Success!")
-
+      countries: countries
+    if @collection.create(attributes)
+      alert("Successfully created!")
+    else
+      alert("There were errors!")
