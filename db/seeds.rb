@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 brandNames = %w(
-  "CocaCola", "Dell", "Samsung", "Panasonic"
+  CocaCola Dell Samsung Panasonic
 )
 countries = {
   "england" => ["en", "ru"],
