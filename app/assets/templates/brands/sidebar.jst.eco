@@ -3,7 +3,7 @@
   <div class="block">
   <ul>
     <% for brand in @brands: %>
-      <li><a href="#"><%= brand.get "name" %></a></li>
+      <li><a href="#"><%= brand.get "name" %></a><a href="#" style="font-size:10px;position:absolute;right:10px;display:inline-block;">Delete</a></li>
     <% end %>
   </ul>
   </div>
