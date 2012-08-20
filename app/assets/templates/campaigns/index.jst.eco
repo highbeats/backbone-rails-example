@@ -5,16 +5,24 @@
     <% for campaign in @campaigns: %>
       <li>
         <div class="c-title">
-          <small>Brand: <%= campaign.brand.get("name") %> campaign</small>
+          <p>Brand: <%= campaign.brand.get("name") %> campaign</p>
         </div>
         <div>
-          <small>From:<%= campaign.get("start_from_date") %></small>
-          <br/>
-          <small>To: <%= campaign.get("end_date") %></small>
+          <p>From:<%= campaign.get("start_from_date") %></p>
+          <p>To: <%= campaign.get("end_date") %></p>
         </div>
         <div class="countries">
-          <small>Countries:
-          </small>
+          <span>Countries:<span><br/>
+          <% for country in campaign.countries_langs: %>
+            <div class="clearfix">
+              <p>
+              <%= country.country %>:
+              <% for lang in country.languages: %>
+                <%= lang %>
+              <% end %>
+              </p>
+            </div>
+          <% end %>
         </div>
       </li>
     <% end %>

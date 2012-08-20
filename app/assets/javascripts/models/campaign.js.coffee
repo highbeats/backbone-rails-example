@@ -15,5 +15,16 @@ class Tapp.Models.Campaign extends Backbone.Model
     @brand.fetch(url: url)
     @brand
 
+  adoptCountriesList: =>
+    countLangs = []
+    _.each @get("countries"), (langs, countryName) ->
+      obj =
+        country: countryName
+        languages: langs
+      countLangs.push obj
+    countLangs
+
+
   initialize: ->
+    @countries_langs = @adoptCountriesList()
     @brand()
