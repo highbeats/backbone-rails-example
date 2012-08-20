@@ -15,8 +15,8 @@ Feature: Campaigns
 
   @javascript
   Scenario: User creates new campaign
-    Given I am on the new campaign page
-    And I fill new campaign with valid data
-    When I click "Save"
+    Given brand exists with name: "Dell", id: 1
+    And I am on the new campaign page
+    When I submit new campaign form with valid data
     Then I should see alert "Success!"
-    And a campaign should exist
+    And a campaign should exist with brand_id: 1
