@@ -4,7 +4,7 @@ class Tapp.Views.CampaignsEdit extends Backbone.View
 
   events: 
     "click #update_campaign": "updateCampaign"
-
+    "click a:contains('Edit countries and languages)": "toggleCountrySettings"
   render: ->
     @$el.html(@template(brands: @brands.models, campaign: @model))
     @
@@ -14,7 +14,11 @@ class Tapp.Views.CampaignsEdit extends Backbone.View
     @model = @options.model
     @router = @options.router
 
+  toggleCountrySettings: ->
 
-
-  updateCampaign: ->
-    
+  updateCampaign: (e) ->
+    e.preventDefault()
+    form = $("form")
+    attributes = ViewsHelpers.processInputs form
+    @model.save attributes, success: (model, response) =>
+      @router.navigate "#campaigns", trigger: true

@@ -24,7 +24,7 @@
   <div class="countries-languages block" style="display:none;"> </div>
 </div>
   <div class="actions">
-    <input type="submit" value="Update" id="save_campaign" class="button">
+    <input type="submit" value="Update" id="update_campaign" class="button">
   </div>
 
 </form>

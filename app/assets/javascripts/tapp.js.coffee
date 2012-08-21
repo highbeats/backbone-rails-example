@@ -36,3 +36,14 @@ window.ViewsHelpers =
           langAbbr = $(lang).val()
           countries[name].push langAbbr if langAbbr.length
     countries
+
+  processInputs: (form, model) ->
+    inputs = $(form).find(".inputs").children(":input")
+    attributes = {}
+    _.each inputs, (input, a) ->
+      inputVal = $(input).val()
+      if inputVal.length
+        inputName = $(input).attr("id")
+        attributes[inputName] = inputVal unless inputVal is model.get(inputName)
+    attributes
+

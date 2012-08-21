@@ -26,6 +26,7 @@
         </div>
         <div class="clearfix">
           <a href="#campaigns/<%= campaign.id %>/edit" class="button edit-campaign">Edit</a>
+          <a href="#" class="button delete-campaign" data-campaign_id="<%= campaign.id %>">Terminate</a>
         </div>
       </li>
     <% end %>
