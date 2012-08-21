@@ -5,18 +5,18 @@ class Tapp.Routers.Campaigns extends Backbone.Router
     "campaigns/:id/edit": "edit"
 
   initialize: ->
-    @layout = new Tapp.Views.CampaignsLayout()
-
     @campaigns = new Tapp.Collections.Campaigns()
-    @brands = new Tapp.Collections.Brands()
     @companies = new Tapp.Collections.Companies()
-
+    @brands = new Tapp.Collections.Brands()
+    @brands.fetch()
     @companies.fetch()
     @campaigns.fetch()
-    @brands.fetch()
 
   index: ->
-    @campaignsIndexView = new Tapp.Views.CampaignsIndex(el: $(".content"), collection: @campaigns, router: @)
+    @campaignsIndexView = new Tapp.Views.CampaignsIndex
+      el: $(".content"),
+      collection: @campaigns,
+      router: @
     @campaignsIndexView.render()
 
   new: ->

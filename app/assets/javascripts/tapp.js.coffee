@@ -5,8 +5,9 @@ window.Tapp =
   Routers: {}
 
   init: ->
-    window.router = new Tapp.Routers.Campaigns()
-    new Tapp.Routers.Application()
+    window.routerCampaigns = new Tapp.Routers.Campaigns()
+    window.routerBrands    = new Tapp.Routers.Brands()
+    window.routerCompanies = {}
     Backbone.history.start()
 
 
@@ -17,6 +18,8 @@ $ ->
     $(this).parent().addClass "current"
   Tapp.init()
 
+
+# Helper functions
 window.ViewsHelpers =
 
   serializeCountriesObject: (form) ->
@@ -33,4 +36,3 @@ window.ViewsHelpers =
           langAbbr = $(lang).val()
           countries[name].push langAbbr if langAbbr.length
     countries
-

@@ -1,0 +1,21 @@
+<h2>Create new brand</h2>
+<a href="#brands">Back</a>
+
+<form id="#new_brand_form" class="simple_form">
+<div class="inputs">
+  <label for="brand_name">Name</label>
+  <input type="text" id="brand_name"><br/>
+  <label for="company_id">Company</label>
+  <select id="company_id">
+    <option value selected="selected">Select company...</option>
+    <% for company in @companies: %>
+      <option value="<%= company.get("id") %>"><%= company.get("name") %></option>
+    <% end %>
+  </select>
+  <br />
+</div>
+<div class="actions">
+  <input type="submit" value="Save" id="save_brand" class="button">
+</div>
+
+</form>

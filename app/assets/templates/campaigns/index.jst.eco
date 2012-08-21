@@ -24,6 +24,9 @@
             </div>
           <% end %>
         </div>
+        <div class="clearfix">
+          <a href="#campaigns/<%= campaign.id %>/edit" class="button edit-campaign">Edit</a>
+        </div>
       </li>
     <% end %>
   </ul>

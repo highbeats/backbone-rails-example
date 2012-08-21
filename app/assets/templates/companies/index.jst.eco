@@ -1,0 +1,35 @@
+<h1>Listing Campaigns <small><%= @campaigns.length %></small></h1>
+<a href="#campaigns/new" class="button">New Campaign</a>
+<% if @campaigns.length: %>
+  <ul class="c-list">
+    <% for campaign in @campaigns: %>
+      <li class="campaign-item widget" data-campaign_id="<%= campaign.id %>">
+        <div class="c-title">
+          <p>Brand: <%= campaign.brand.get("name") %> campaign</p>
+        </div>
+        <div>
+          <p>From:<%= campaign.get("start_from_date") %></p>
+          <p>To: <%= campaign.get("end_date") %></p>
+        </div>
+        <div class="countries">
+          <span>Countries:<span><br/>
+          <% for country in campaign.countries_langs: %>
+            <div class="clearfix">
+              <p>
+              <%= country.country %>:
+              <% for lang in country.languages: %>
+                <%= lang %>
+              <% end %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+        <div class="clearfix">
+          <a href="#campaigns/<%= campaign.id %>/edit" class="button edit-campaign">Edit</a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else: %>
+  <h1><%= @campaigns %></h1>
+<% end %>

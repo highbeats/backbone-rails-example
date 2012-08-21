@@ -1,0 +1,18 @@
+<h1>Listing Brands</h1>
+<a href="#brands/new" class="button">New Brand</a>
+<% if @brands.length: %>
+  <ul class="c-list">
+    <% for brand in @brands: %>
+      <li class="campaign-item widget">
+          <h1><%= brand.get("name") %></h1>
+        <div class="clearfix"><p> Company: <%= brand.company.get('name') if brand.company? %></p></div>
+        <div class="clearfix">
+          <a href="#brands/<%= brand.id %>/edit" class="button edit-brand">Edit</a>
+          <a href="#" class="button destroy-brand" data-brand_id="<%= brand.id %>">Delete</a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else: %>
+  No brands found...
+<% end %>
