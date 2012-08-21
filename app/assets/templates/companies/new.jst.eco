@@ -1,28 +1,20 @@
-<h2>Create new campaign</h2>
-<a href="#campaigns">Back</a>
+<h2>Create new company</h2>
+<a href="#companies">Back</a>
 
-<form id="#new_campaign_form" class="simple_form">
+<form id="#new_company_form" class="simple_form">
 <div class="inputs">
-  <label for="brand_id">Brand</label>
-  <select id="brand_id">
-    <option value selected="selected">Select brand...</option>
-    <% for brand in @brands: %>
-      <option value="<%= brand.get("id") %>"><%= brand.get("name") %></option>
-    <% end %>
-  </select>
+  <label for="company_name">Name</label>
+  <input type="text" id="company_name">
   <br />
-  <label for="start_from_date">From</label>
-  <input class="datetime" id="start_from_date"><br/>
-  <label for="end_time">Upto </label>
-  <input class="datetime" id="end_date"><br/>
-  <div class="block">
-    <a href="#" class="add-country" id="clb">Add country</a><br/>
-  </div>
-  <div class="countries-languages block"> </div>
+  <label for="comapany_address">Address</label>
+  <input type="text" id="company_address">
+  <br />
+  <label for="company_phone">Phone</label>
+  <input type="text" id="company_phone">
+  <br/>
 </div>
   <div class="actions">
-   
-    <input type="submit" value="Save" id="save_campaign" class="button">
+    <input type="submit" value="Save" id="save_company" class="button">
   </div>
 
 </form>

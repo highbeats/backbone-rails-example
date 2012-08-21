@@ -7,9 +7,8 @@ window.Tapp =
   init: ->
     window.routerCampaigns = new Tapp.Routers.Campaigns()
     window.routerBrands    = new Tapp.Routers.Brands()
-    window.routerCompanies = {}
+    window.routerCompanies = new Tapp.Routers.Companies()
     Backbone.history.start()
-
 
 $ ->
   $("div#navigation ul.nav").on "click", "a", ->
@@ -17,7 +16,6 @@ $ ->
     $(this).closest("ul").find("li").removeClass "current"
     $(this).parent().addClass "current"
   Tapp.init()
-
 
 # Helper functions
 window.ViewsHelpers =

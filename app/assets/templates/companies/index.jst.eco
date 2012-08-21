@@ -1,35 +1,24 @@
-<h1>Listing Campaigns <small><%= @campaigns.length %></small></h1>
-<a href="#campaigns/new" class="button">New Campaign</a>
-<% if @campaigns.length: %>
+<h1>Listing Campaigns <small><%= @companies.length %></small></h1>
+<a href="#companies/new" class="button">New Company</a>
+<% if @companies.length: %>
   <ul class="c-list">
-    <% for campaign in @campaigns: %>
-      <li class="campaign-item widget" data-campaign_id="<%= campaign.id %>">
+    <% for company in @companies: %>
+      <li class="company-item widget">
         <div class="c-title">
-          <p>Brand: <%= campaign.brand.get("name") %> campaign</p>
+          <h4> <%= company.get("name") %> campaign</h4>
         </div>
         <div>
-          <p>From:<%= campaign.get("start_from_date") %></p>
-          <p>To: <%= campaign.get("end_date") %></p>
+          <p>Address:<%= company.get("address") %></p>
         </div>
-        <div class="countries">
-          <span>Countries:<span><br/>
-          <% for country in campaign.countries_langs: %>
-            <div class="clearfix">
-              <p>
-              <%= country.country %>:
-              <% for lang in country.languages: %>
-                <%= lang %>
-              <% end %>
-              </p>
-            </div>
-          <% end %>
+        <div>
+          <p>Phone: <% company.get("phone") %></p>
         </div>
         <div class="clearfix">
-          <a href="#campaigns/<%= campaign.id %>/edit" class="button edit-campaign">Edit</a>
+          <a href="#companies/<%= company.id %>/edit" class="button edit-company">Edit</a>
         </div>
       </li>
     <% end %>
   </ul>
 <% else: %>
-  <h1><%= @campaigns %></h1>
+  <h1>Looks like there're no companies!</h1>
 <% end %>
