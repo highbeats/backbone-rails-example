@@ -1,20 +1,24 @@
-class Tapp.Views.CampaignsEdit extends Backbone.View
+class Tapp.Views.BrandsEdit extends Backbone.View
 
-  template: JST['campaigns/edit']
+  template: JST['brands/edit']
 
   events: 
-    "click #update_campaign": "updateCampaign"
+    "click #update_brand": "updateBrand"
 
   render: ->
-    @$el.html(@template(brands: @brands.models, campaign: @model))
+    @$el.html(@template(companies: @companies.models, brand: @model))
     @
 
   initialize: ->
-    @brands = @options.brands
+    @companies = @options.companies
     @model = @options.model
     @router = @options.router
 
-
-
-  updateCampaign: ->
-    
+  updateBrand: ->
+    attributes =
+      name: $("#brand_name").val()
+      company_id: $("#company_id").val()
+    if @model.save attributes
+      @router.navigate "#brands", trigger: true
+    else
+      alert "Can't update"

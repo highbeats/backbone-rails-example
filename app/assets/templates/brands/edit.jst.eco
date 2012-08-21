@@ -1,30 +1,21 @@
-<h2>Edit campaign</h2>
-<a href="#campaigns">Back</a>
+<h2>Edit brand</h2>
+<a href="#brands">Back</a>
 
-<form id="#edit_campaign_form" class="simple_form">
+<form id="#new_brand_form" class="simple_form">
 <div class="inputs">
-  <label for="brand_id">Brand</label>
-  <select id="brand_id">
-    <option value selected="selected">Select brand...</option>
-    <% for brand in @brands: %>
-      <option value="<%= brand.get("id") %>"><%= brand.get("name") %></option>
+  <label for="brand_name">Name</label>
+  <input type="text" id="brand_name" placeholder="<%= @brand.get("name") %>"><br/>
+  <label for="company_id">Company</label>
+  <select id="company_id">
+    <option value selected="selected">Select company...</option>
+    <% for company in @companies: %>
+      <option value="<%= company.get("id") %>" selected=<%= "selected" if company.get("id") is @brand.id %>><%= company.get("name") %></option>
     <% end %>
   </select>
   <br />
-  <label for="start_from_date">From</label>
-  <a href="#"><%= @campaign.get("start_from_date") %></a><br/>
-  <input class="datetime" id="start_from_date" style="display:none;"><br/>
-  <label for="end_time">Upto </label>
-  <a href="#"><%= @campaign.get("end_date") %></a>
-  <input class="datetime" id="end_date" style="display:none;"><br/>
-  <div class="block">
-    <a href="#" class="add-country" id="clb">Add country</a><br/>
-  </div>
-  <a href="#">Edit countries and languages</a>
-  <div class="countries-languages block" style="display:none;"> </div>
 </div>
-  <div class="actions">
-    <input type="submit" value="Update" id="save_campaign" class="button">
-  </div>
+<div class="actions">
+  <input type="submit" value="Update" id="update_brand" class="button">
+</div>
 
 </form>
