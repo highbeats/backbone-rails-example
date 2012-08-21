@@ -19,3 +19,4 @@ class Tapp.Routers.Companies extends Backbone.Router
     @companiesNewView = new Tapp.Views.CompaniesNew
       el: $(".content"),
       router: @
+    @companiesNewView.render()

@@ -1,20 +1,20 @@
 <h2>Create new company</h2>
 <a href="#companies">Back</a>
 
-<form id="#new_company_form" class="simple_form">
+<form id="#new_brand_form" class="simple_form">
 <div class="inputs">
   <label for="company_name">Name</label>
   <input type="text" id="company_name">
-  <br />
-  <label for="comapany_address">Address</label>
+  <br/>
+  <label for="company_address">Address</label>
   <input type="text" id="company_address">
   <br />
   <label for="company_phone">Phone</label>
   <input type="text" id="company_phone">
-  <br/>
+  <br />
 </div>
-  <div class="actions">
-    <input type="submit" value="Save" id="save_company" class="button">
-  </div>
+<div class="actions">
+  <input type="submit" value="Save" id="save_company" class="button">
+</div>
 
 </form>
