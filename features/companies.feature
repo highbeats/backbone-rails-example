@@ -12,14 +12,13 @@ Feature: Comapnies management
     And I am on the home page
     When I navigate to companies section
     Then I should see the list of existing companies
-    And I should see attributes for each company
 
   @javascript
   Scenario: User creates company with valid data
-    Given I am on the new company page
+    Given no companies exist
+    And I am on the new company page
     When I submit new company form with valid data
-    Then I should see new company added to index
-    And the company should exist with
+    Then company should exist with name: "TestName"
 
   @javascript
   Scenario: User deletes company

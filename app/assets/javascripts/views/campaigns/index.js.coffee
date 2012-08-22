@@ -19,4 +19,4 @@ class Tapp.Views.CampaignsIndex extends Backbone.View
     campaignId = $(e.target).data("campaign_id")
     @campaign = @collection.get campaignId
     @campaign.destroy success: (model, response) ->
-      alert "Campaign has been deleted!"
+      $("#flashes").text("Campaign has been deleted!")
