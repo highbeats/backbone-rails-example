@@ -5,7 +5,7 @@
     <% for company in @companies: %>
       <li class="company-item widget">
         <div class="c-title">
-          <h4> <%= company.get("name") %> campaign</h4>
+          <h4> <%= company.get("name") %> </h4>
         </div>
         <div>
           <p>Address:<%= company.get("address") %></p>

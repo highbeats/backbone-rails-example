@@ -14,12 +14,11 @@ class Tapp.Views.CompaniesNew extends Backbone.View
     @collection = @options.collection
 
   saveCompany: (e) ->
-    e.preventDefault()
     attributes =
       name: $("#company_name").val()
       address: $("#company_address").val()
       phone: $("#company_phone").val()
     if @collection.create attributes
-      @router.navigate "#brands", trigger: true
+      @router.navigate "#companies", trigger: true
     else
       alert "There were errors!"

@@ -10,13 +10,24 @@ Feature: Campaigns
       | 1        | 20/08/2012      | 25/08/2012 |
       | 1        | 24/09/2012      | 30/09/2012 |
     And I am on the home page
-    When I go to campaigns index
-    Then I should see the list of all campaigns
+    When I navigate to campaigns section
+    Then I should see the list of existing campaigns
 
   @javascript
   Scenario: User creates new campaign
     Given brand exists with name: "Dell", id: 1
+    And no campaigns exist
     And I am on the new campaign page
     When I submit new campaign form with valid data
-    Then I should see campaigns list
-    And the campaign should exist with brand_id: 1
+    Then the campaign should exist with brand_id: 1
+
+  @javascript
+  Scenario: User deletes campaign
+    Given the following campaigns exist
+      | brand_id | start_from_date | end_date   |
+      | 1        | 20/08/2012      | 25/08/2012 |
+      | 1        | 24/09/2012      | 30/09/2012 |
+    And I am on the home page
+    When I navigate to campaigns section
+    And I delete campaign
+    Then 1 campaign should exist

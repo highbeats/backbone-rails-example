@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    if @company = Company.create(params[:brand])
+    if @company = Company.create(params[:company])
       respond_with @company
     else
       respond_with @company.errors

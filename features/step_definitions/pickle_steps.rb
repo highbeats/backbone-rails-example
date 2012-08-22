@@ -10,6 +10,10 @@ Given(/^(\d+) #{capture_plural_factory} exist(?: with #{capture_fields})?$/) do 
   count.to_i.times { create_model(plural_factory.singularize, fields) }
 end
 
+Then /^1 #{capture_model} should exist$/ do |name|
+  name.classify.constantize.all.size.should == 1
+end
+
 # create models from a table
 Given(/^the following #{capture_plural_factory} exists?:?$/) do |plural_factory, table|
   create_models_from_table(plural_factory, table)

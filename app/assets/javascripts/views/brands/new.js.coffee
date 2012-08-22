@@ -18,7 +18,6 @@ class Tapp.Views.BrandsNew extends Backbone.View
 
 
   saveBrand: (e) ->
-    e.preventDefault()
     attributes =
       name: $("#brand_name").val()
       company_id: $("#company_id").val()

@@ -13,10 +13,13 @@ class Tapp.Routers.Companies extends Backbone.Router
       el: $(".content"),
       collection: @companies,
       router: @
+
     @companiesIndexView.render()
 
   new: ->
     @companiesNewView = new Tapp.Views.CompaniesNew
       el: $(".content"),
+      collection: @companies,
       router: @
+
     @companiesNewView.render()
