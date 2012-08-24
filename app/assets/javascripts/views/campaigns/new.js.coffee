@@ -29,9 +29,9 @@ class Tapp.Views.CampaignsNew extends Backbone.View
     form = @$("form")
     countries = ViewsHelpers.serializeCountriesObject(form)
     attributes =
-      brand_id: $("#brand_id").val(),
-      start_from_date: $(".datetime").first().val(),
-      end_date: $(".datetime").last().val(),
+      brand_id: @$("#brand_id").val(),
+      start_from_date: @$(".datetime").first().val(),
+      end_date: @$(".datetime").last().val(),
       countries: countries
     if @collection.create(attributes)
       @router.navigate "#campaigns", trigger: true

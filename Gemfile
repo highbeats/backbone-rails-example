@@ -24,6 +24,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'backbone-on-rails'
 gem 'eco'
+gem 'bourbon'
 
 group :development, :test  do
   gem 'rspec-rails'
