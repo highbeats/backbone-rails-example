@@ -1,58 +1,149 @@
-@import "compass/css3";
 .button {
   @include button(simple, #ececec);
 }
-.c-list {
-  width: 100%;
+
+.left-side-controls {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  @include box-shadow($border-shadow);
+  margin-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: flex-grid(2, 12);
+  float: left;
+  .button{
+    @include button(shiny);
+  }
+}
+ul.c-list {
+  width: flex-grid(10, 12);
+  float: left;
   list-style:none;
-  padding-left: 0;
+  padding-left: 0px;
+  border: 2px solid $border-color;
+  background-color: #ffffff;
+  @include border-radius(5px);
+  @include box-shadow($border-shadow);
 
   li {
+    background-color: #ececec;
     @include inline-block;
+    width: 205px;
     vertical-align:top;
-    width: 150px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    padding: 16px;
-    border: 1px solid #ccc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    padding: 10px;
+    border: 1px solid $border-color;
+    @include border-radius(5px);
 
     .cell-top {
-      background: #ffffff;
+      background: darken($bg-default, 20%);
       font-weight: bold;
-      font-size: 12px;
+      font-size: 14px;
       text-align: center;
       @include clearfix;
       border-bottom: 1px solid #ccc;
+      @include border-top-left-radius(5px);
+      @include border-top-right-radius(5px);
     }
+
     .cell-bottom {
+      display: none;
       @include clearfix;
       padding-top: 5px;
       border-top: 1px solid #ccc;
 
       .button{
+        @include button(pill);
       }
     }
 
     table {
+      margin-top: 5px;
+      margin-bottom: 5px;
       tbody {
         tr {
-          font-size: 12px;
+          font-size: 13px;
           th {
             font-weight: bold;
             text-align: left;
           }
           td {
+            width: 100%;
             background: #ffffff;
+            padding-left: 5px;
+            border: 1px solid $border-color;
+            @include border-radius(5px);
           }
         }
       }
     }
   }
 
-
-
   li:hover {
     cursor: pointer;
     background: #ececec;
+  }
+}
+
+// new form
+
+.new-campaign-wrap {
+  h6 {
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 10px;
+    height: 36px;
+    @include linear-gradient(#3585de, #001576);
+    margin-bottom: 0px;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #00077e;
+    @include border-top-radius(5px);
+    
+    a {
+      @include button(pill, #ececec);
+      float: right;
+    }
+  }
+  margin-left: 396px;
+  float:left;
+  width: 400px;
+  margin-top: 10px;
+
+  form {
+    .inputs {
+
+      background-color: #ececec;
+      border: 1px solid $border-color;
+      @include box-shadow($border-shadow);
+      @include border-bottom-radius(5px);
+      padding: 10px;
+
+      .input-group {
+        margin-bottom: 7px;
+        @include clearfix;
+        #{$all-text-inputs} {
+          height: 20px;
+          width: 70%;
+          float: right;
+          border: 1px solid $border-color;
+          @include border-radius(3px);
+        }
+
+        select {
+          height: 20px;
+          width: 70%;
+          float: right;
+        }
+      }
+    }
+
+    .actions {
+      .button {
+        @include button(shiny);
+      }
+    }
   }
 }

@@ -1,8 +1,11 @@
-<h2>Create new campaign</h2>
-<a href="#campaigns">Back</a>
+<div class="new-campaign-wrap">
+<h6>Create new campaign<a href="#campaigns">Back</a> </h6>
+
 
 <form id="#new_campaign_form" class="simple_form">
 <div class="inputs">
+
+  <div class="input-group">
   <label for="brand_id">Brand</label>
   <select id="brand_id">
     <option value selected="selected">Select brand...</option>
@@ -10,11 +13,17 @@
       <option value="<%= brand.get("id") %>"><%= brand.get("name") %></option>
     <% end %>
   </select>
-  <br />
-  <label for="start_from_date">From</label>
-  <input class="datetime" id="start_from_date"><br/>
-  <label for="end_time">Upto </label>
-  <input class="datetime" id="end_date"><br/>
+  </div>
+  <div class="input-group">
+    <label for="start_from_date">From</label>
+    <input class="datetime" id="start_from_date" type="date"><br/>
+  </div>
+
+  <div class="input-group">
+    <label for="end_time">Upto </label>
+    <input class="datetime" id="end_date" type="date"><br/>
+  </div>
+
   <div class="block">
     <a href="#" class="add-country" id="clb">Add country</a><br/>
   </div>
@@ -26,3 +35,4 @@
   </div>
 
 </form>
+</div>

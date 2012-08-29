@@ -1,11 +1,12 @@
-<h5><%= @campaigns.length %> campaigns</h5>
-<a href="#campaigns/new" class="button">New Campaign</a>
+<div class="left-side-controls">
+  <h5><%= @campaigns.length %> campaigns</h5>
+  <a href="#campaigns/new" class="button">New Campaign</a>
+</div>
 <% if @campaigns.length: %>
   <ul class="c-list">
     <% for campaign in @campaigns: %>
       <li class="campaign-item widget" data-campaign_id="<%= campaign.id %>">
         <div class="clearfix cell-top">
-          <%= campaign.id %>
         </div>
         <table>
           <tbody>

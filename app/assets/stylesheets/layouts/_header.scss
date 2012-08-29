@@ -4,17 +4,8 @@ header#header{
 	height:46px;
 	width: flex-grid(12);
   background-color: #ececec;
-  border-bottom: 1px solid #7f7f7f;
-  @include box-shadow(none);
-
-  .logo {
-    position: relative;
-    float: left;
-    width: 12%;
-    height: 100%;
-    font-size: 18px;
-    background-color: #ececec;
-  }
+  border-bottom: 1px solid $border-color;
+  @include box-shadow($border-shadow);
 
   ul.top_nav{
     position: relative;
@@ -25,11 +16,11 @@ header#header{
     li{
       display:inline;
       margin-left:25px;
-      color:#7F7F7F;
+      color: darken(#ececec, 30%);
 
       a{
         font-size: 14px;
-        color: #111111;
+        color: darken(#ececec, 30%);
         text-decoration:none;
         padding: 3px 10px 4px;
         border: 1px solid transparent;

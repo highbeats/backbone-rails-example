@@ -1,138 +1,42 @@
 #navigation{
-	
+  @include clearfix;
+  margin-left: flex-grid(4, 12);
   ul.nav{
-    padding: 0 35px;
-    clear: left;
-    height: 44px;
     list-style: none;
-  
     li {
       position: relative;
       float: left;
       padding: 0 0 0 2px;
-      margin: 0 5px 0 0;
+      margin: 0 5px 5px 9px;
       
-      &.admin{
-        float:right;
-        
-        ul{
-          right:5px;
-          left:auto;
-        }
-      }
-  
-      &.parent>a {
-        background: image-url('icons/expand_hover.png') no-repeat 83% 55%;
-        padding-right: 32px;
-        position:relative;
-        z-index:501;
-  
-        &:hover, &.active {
-          //background: #cfcfcf image-url('icons/expand_hover.gif') no-repeat 90% 50%;
-          background:#252525;
-        }
-      } 
-
-      &.current {
-        background:#ffffff;
-      }
-  
       a {
+        width: flex-grid(8);
         font-size: 16px;
         display: block;
+        text-align: center;
         text-decoration: none;
-        color: #111111;
+        font-weight: bold;
+        color: darken($bg-default, 30%);
         padding: 14px 18px 12px 18px;
-
-        &:hover{
-          color: #111111;
-          background-color: #ffffff;
+        border: 1px solid darken($bg-default, 20%);
+        @include border-radius(3px);
+        @include box-shadow($border-shadow);
+        &:hover {
+          color: darken($bg-default, 70%);
+          background-color: darken($bg-default, 20%);
           @include border-radius(3px);
           @include background-size(50% 100%);
+          @include box-shadow($border-shadow);
 
         }
       }
-  
-      ul {
-        li{
-          width: 200px;
-          padding:0;
-          margin: 0;
 
-          &.first{
-            a{
-              border-top: none;
-            }
-          }
-  
-          &.last{
-            a, a:hover {
-              border-bottom: none;
-            }
-          }
-  
-          a {
-            padding: 6px 15px 5px;
-            border: 1px solid #171717;
-            border-bottom: none;
-            background: #3f3f3f image-url('navigation/dropdawn_bg.png') repeat-x 0 0;
-  
-            &:hover {
-              background: #4789dd image-url('navigation/dropdawn_hover_bg.png') repeat-x 0 0;
-              border: 1px solid #0a2e4e;
-              border-bottom: none;
-            }
-          }
+      &.current {
+        a {
+          color: darken($bg-default, 70%);
+          background-color: darken($bg-default, 30%);
         }
       }
     }
-  }
-
-	li:hover ul, li.over ul, ul.nav li.admin ul li:hover ul{
-	  display: block;
-	}
-  
-  li:hover ul, li.over ul, ul.nav li.rep ul li:hover ul{
-    display: block;
-  }
-
-	li ul {
-	  position: absolute;
-	  left: 2px;
-	  top: 43px;
-	  display: none;
-	  list-style-type: none;
-	  background: #3f3f3f;
-    border-bottom: 1px solid #171717;
-    z-index: 1000;
-    @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
-  }
-
-  ul.nav li.admin ul li ul{
-    position: absolute;
-    display: none;
-    top: 0;
-    right:200px;
-  }
-  ul.nav li.rep ul li ul{
-    position: absolute;
-    display: none;
-    top: 0;
-    left:200px;
-  }
-}
-
-* html ul li {
-  float: left;
-  height: 1%;
-}
-
-* html ul li a {
-  height: 1%;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  ul#topnav li a {
-    padding: 9px 15px;
   }
 }

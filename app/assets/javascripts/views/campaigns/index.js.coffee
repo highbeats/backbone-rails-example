@@ -7,12 +7,18 @@ class Tapp.Views.CampaignsIndex extends Backbone.View
 
   render: ->
     @$el.html(@template(campaigns: @collection.models))
+    @$el.find("ul.c-list").on "mouseenter", "li", @toggleControls
     @
 
   initialize: ->
     @collection = @options.collection
     @router = @options.router
     @collection.on "all", @render, this
+
+  toggleControls: ->
+    $(this).find(".cell-bottom").slideDown("fast")
+    $(this).on "mouseleave", ->
+      $(this).find(".cell-bottom").slideUp("fast")
 
   deleteCampaign: (e) ->
     e.preventDefault()

@@ -13,17 +13,25 @@ class Tapp.Routers.Campaigns extends Backbone.Router
     @campaigns.fetch()
 
   index: ->
-    @campaignsIndexView = new Tapp.Views.CampaignsIndex
+    view = new Tapp.Views.CampaignsIndex
       el: $(".content"),
       collection: @campaigns,
       router: @
-    @campaignsIndexView.render()
+    view.render()
 
   new: ->
-    @newCampaignView = new Tapp.Views.CampaignsNew(el: $(".content"), brands: @brands, collection: @campaigns, router: @)
-    @newCampaignView.render()
+    view = new Tapp.Views.CampaignsNew
+      el: $(".content"),
+      brands: @brands,
+      collection: @campaigns,
+      router: @
+    view.render()
 
   edit: (id) ->
     @campaign = @campaigns.get(id)
-    @editCampaignView = new Tapp.Views.CampaignsEdit(el: $(".content"), model: @campaign, brands: @brands, router: @)
-    @editCampaignView.render()
+    view = new Tapp.Views.CampaignsEdit
+      el: $(".content"),
+      model: @campaign,
+      brands: @brands,
+      router: @
+    view.render()
