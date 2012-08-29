@@ -1,8 +1,10 @@
 #main{
   width: flex-grid(12);
-  margin-left: flex-gutter();
-
+  @include background-image(url("download.png"));
   .content{
+    position: relative;
+    float:left;
+    margin-left: flex-gutter();
   }
 }
 

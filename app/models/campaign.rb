@@ -18,6 +18,6 @@ class Campaign < ActiveRecord::Base
   end
 
   def brand_name
-    self.brand.name
+    brand.name if brand.present?
   end
 end
