@@ -10,7 +10,7 @@
         <table>
           <tbody>
             <tr>
-              <th>Brand:</th><td><%= campaign.brand.get("name") %></td>
+              <th>Brand:</th><td><%= campaign.get("brand_name") %></td>
             </tr>
             <tr>
               <th>From:</th><td><%= campaign.get("start_from_date") %></td>

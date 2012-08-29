@@ -7,7 +7,7 @@ class Tapp.Models.Campaign extends Backbone.Model
     end_date: null
     countries: null
     brand_id: null
-    brand: null
+    brand_name: null
 
   brand: =>
     @brand = new Tapp.Models.Brand()
@@ -28,4 +28,4 @@ class Tapp.Models.Campaign extends Backbone.Model
 
   initialize: ->
     @countries_langs = @adoptCountriesList()
-    @brand()
+

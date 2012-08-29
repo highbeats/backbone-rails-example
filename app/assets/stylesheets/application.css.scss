@@ -1,10 +1,12 @@
-@import "compass";
 @import "bourbon";
+@import "base";
+
+@import "layouts/main";
 @import "layouts/navigation";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
-@import "base";
-@import "page";
+
+
 @import "campaigns";
 @import "forms";
