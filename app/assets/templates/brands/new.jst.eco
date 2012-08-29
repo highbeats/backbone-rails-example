@@ -4,12 +4,12 @@
 <form id="#new_brand_form" class="simple_form">
 <div class="inputs">
   <label for="brand_name">Name</label>
-  <input type="text" id="brand_name"><br/>
+  <input type="text" id="brand_name" placeholder=<%= @brand.get("name") if @brand? %>><br/>
   <label for="company_id">Company</label>
   <select id="company_id">
     <option value selected="selected">Select company...</option>
     <% for company in @companies: %>
-      <option value="<%= company.get("id") %>"><%= company.get("name") %></option>
+      <option value="<%= company.get("id") %>" selected=<%= if @brand and @brand.company.get("id") is company.get("id") then "selected" else "" %>><%= company.get("name") %></option>
     <% end %>
   </select>
   <br />

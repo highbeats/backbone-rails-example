@@ -1,20 +1,58 @@
 @import "compass/css3";
+.button {
+  @include button(simple, #ececec);
+}
 .c-list {
   width: 100%;
   list-style:none;
   padding-left: 0;
 
   li {
-    display:inline-block;
+    @include inline-block;
     vertical-align:top;
-    width: 207px;
+    width: 150px;
     margin-right: 5px;
     margin-bottom: 5px;
     padding: 16px;
     border: 1px solid #ccc;
+
+    .cell-top {
+      background: #ffffff;
+      font-weight: bold;
+      font-size: 12px;
+      text-align: center;
+      @include clearfix;
+      border-bottom: 1px solid #ccc;
+    }
+    .cell-bottom {
+      @include clearfix;
+      padding-top: 5px;
+      border-top: 1px solid #ccc;
+
+      .button{
+      }
+    }
+
+    table {
+      tbody {
+        tr {
+          font-size: 12px;
+          th {
+            font-weight: bold;
+            text-align: left;
+          }
+          td {
+            background: #ffffff;
+          }
+        }
+      }
+    }
   }
 
+
+
   li:hover {
-    background: #fff;
+    cursor: pointer;
+    background: #ececec;
   }
 }

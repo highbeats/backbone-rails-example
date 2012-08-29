@@ -34,6 +34,9 @@ class Tapp.Views.CampaignsNew extends Backbone.View
       end_date: @$(".datetime").last().val(),
       countries: countries
     if @collection.create(attributes)
+      @collection.fetch()
+      _.each @collection.models, (model, i) ->
+        model.brand()
       @router.navigate "#campaigns", trigger: true
     else
       alert("There were errors!")

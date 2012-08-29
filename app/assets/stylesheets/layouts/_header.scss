@@ -2,8 +2,23 @@ header#header{
 	position:relative;
 	height:46px;
 	width:100%;
-  background: #2f2f2f;
-  
+  background-color: #ececec;
+  border-bottom: 1px solid #7f7f7f;
+
+  .logo {
+    position: relative;
+    float: left;
+    width: 12%;
+    height: 100%;
+    font-size: 18px;
+    background-color: #ececec;
+    border-right: 1px solid #7f7f7f;
+    a {
+      margin-left: 50px;
+      margin-top: 10px;
+    }
+  }
+
   h1{ 
     margin-bottom:15px;
 		position:absolute;
@@ -24,22 +39,21 @@ header#header{
     li{
       display:inline;
       margin-left:25px;
-      color:#FFF;
-      font-weight:bold;
-      @include text-shadow(#082252 0 1px 2px);
+      color:#7F7F7F;
 
       a{
-        font-size:0.91em;
+        font-size: 14px;
+        color: #111111;
         text-decoration:none;
-        color:#FFF;
         padding: 3px 10px 4px;
         border: 1px solid transparent;
       }
 
       a:hover{
         background:#666;
+        color: #ececec;
         @include box-shadow(none);
-        @include border-radius(10px);
+        @include border-radius(2px);
       }
     }
 

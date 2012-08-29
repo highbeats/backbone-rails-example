@@ -1,32 +1,27 @@
-<h1>Listing Campaigns <small><%= @campaigns.length %></small></h1>
+<h5><%= @campaigns.length %> campaigns</h5>
 <a href="#campaigns/new" class="button">New Campaign</a>
 <% if @campaigns.length: %>
   <ul class="c-list">
     <% for campaign in @campaigns: %>
       <li class="campaign-item widget" data-campaign_id="<%= campaign.id %>">
-        <div class="c-title">
-          <p>Brand: <%= campaign.brand.get("name") %> campaign</p>
+        <div class="clearfix cell-top">
+          <%= campaign.id %>
         </div>
-        <div>
-          <p>From:<%= campaign.get("start_from_date") %></p>
-          <p>To: <%= campaign.get("end_date") %></p>
-        </div>
-        <div class="countries">
-          <span>Countries:<span><br/>
-          <% for country in campaign.countries_langs: %>
-            <div class="clearfix">
-              <p>
-              <%= country.country %>:
-              <% for lang in country.languages: %>
-                <%= lang %>
-              <% end %>
-              </p>
-            </div>
-          <% end %>
-        </div>
-        <div class="clearfix">
+        <table>
+          <tbody>
+            <tr>
+              <th>Brand:</th><td><%= campaign.brand.get("name") %></td>
+            </tr>
+            <tr>
+              <th>From:</th><td><%= campaign.get("start_from_date") %></td>
+            </tr>
+            <tr>
+              <th>To:</th><td> <%= campaign.get("end_date") %></td>
+            </tbody>
+         </table>
+        <div class="clearfix cell-bottom">
           <a href="#campaigns/<%= campaign.id %>/edit" class="button edit-campaign">Edit</a>
-          <a href="#" class="button delete-campaign" data-campaign_id="<%= campaign.id %>">Terminate</a>
+          <a href="#" class="button delete-campaign" data-campaign_id="<%= campaign.id %>">Stop</a>
         </div>
       </li>
     <% end %>

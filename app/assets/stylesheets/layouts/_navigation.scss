@@ -34,30 +34,22 @@
       } 
 
       &.current {
-        background:#252525;
-        border-right: 1px solid rgba(200, 200, 200, 0.2);
-
-          a{
-            color: #FFF;
-          }
-
-          ul{
-            li{
-              a{}
-            }
-          }
+        background:#ffffff;
       }
   
       a {
-        font-size: 20px;
+        font-size: 16px;
         display: block;
         text-decoration: none;
-        color: #2f2f2f;
+        color: #111111;
         padding: 14px 18px 12px 18px;
 
         &:hover{
-          color: gray;
-          background:#252525;
+          color: #111111;
+          background-color: #ffffff;
+          @include border-radius(3px);
+          @include background-size(50% 100%);
+
         }
       }
   

@@ -20,11 +20,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:active, a:visited { 
-	color: $link-color; 
 	text-decoration:none;
 }
 a:hover { 
-	color: $link-hover-color; 
 	text-decoration:underline;
 }
 
@@ -62,7 +60,6 @@ html{
 
 body {
   background:#EFEFEF;
-	background-image:image-url('content/bg.jpg');
   height: 100%;
   min-width:820px;
   font-family:Arial;
@@ -101,6 +98,12 @@ h2{
   margin-bottom:10px;
 }
 
+#main {
+  padding:15px 35px 70px 35px;
+  border-top:1px dotted #7f7f7f;
+  border-top-width:thin;
+  position:relative;
+}
 
 h1,h2,h3,h4,h5,h6{
 	font-weight:normal;

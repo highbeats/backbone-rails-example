@@ -1,6 +1,6 @@
 class Tapp.Views.BrandsEdit extends Backbone.View
 
-  template: JST['brands/edit']
+  template: JST['brands/new']
 
   events: 
     "click #update_brand": "updateBrand"
