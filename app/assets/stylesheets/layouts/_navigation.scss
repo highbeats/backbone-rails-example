@@ -1,14 +1,17 @@
 #navigation{
+
   @include clearfix;
   margin-left: flex-grid(4, 12);
+
   ul.nav{
     list-style: none;
+
     li {
       position: relative;
       float: left;
       padding: 0 0 0 2px;
       margin: 0 5px 5px 9px;
-      
+
       a {
         width: flex-grid(8);
         font-size: 16px;
@@ -23,7 +26,6 @@
         @include box-shadow($border-shadow);
         &:hover {
           color: darken($bg-default, 70%);
-          background-color: darken($bg-default, 20%);
           @include border-radius(3px);
           @include background-size(50% 100%);
           @include box-shadow($border-shadow);
@@ -34,7 +36,6 @@
       &.current {
         a {
           color: darken($bg-default, 70%);
-          background-color: darken($bg-default, 30%);
         }
       }
     }

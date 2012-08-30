@@ -3,10 +3,11 @@ html {
 }
 
 #main{
-  width: flex-grid(12);
   @include background-image(url("download.png"));
+
   .content{
     position: relative;
+    width: flex-grid(12);
     float:left;
     margin-left: flex-grid(1);
   }

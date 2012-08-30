@@ -41,7 +41,7 @@ class Tapp.Views.CampaignsNew extends Backbone.View
         countriesAttributes.push obj
       console.log countriesAttributes
       @countries = new Tapp.Collections.Countries(countriesAttributes)
-      if @model.save countries: @countries.models
+      if @model.save(countries: @countries)
         @router.navigate "#campaigns", trigger: true
       else
         @$el.find("#flashes").append("Something went wrong!")

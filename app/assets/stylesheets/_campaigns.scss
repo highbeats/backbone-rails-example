@@ -2,90 +2,96 @@
   @include button(simple, #ececec);
 }
 
-.left-side-controls {
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
-  @include box-shadow($border-shadow);
-  margin-top: 30px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  width: flex-grid(2, 12);
-  float: left;
-  .button{
-    @include button(shiny);
-  }
-}
-ul.c-list {
-  width: flex-grid(10, 12);
-  float: left;
-  list-style:none;
-  padding-left: 0px;
-  border: 2px solid $border-color;
-  background-color: #ffffff;
-  @include border-radius(5px);
-  @include box-shadow($border-shadow);
-
-  li {
-    background-color: #ececec;
-    @include inline-block;
-    width: 205px;
-    vertical-align:top;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 25px;
-    padding: 10px;
-    border: 1px solid $border-color;
-    @include border-radius(5px);
-
-    .cell-top {
-      background: darken($bg-default, 20%);
-      font-weight: bold;
-      font-size: 14px;
-      text-align: center;
-      @include clearfix;
-      border-bottom: 1px solid #ccc;
-      @include border-top-left-radius(5px);
-      @include border-top-right-radius(5px);
-    }
-
-    .cell-bottom {
-      display: none;
-      @include clearfix;
-      padding-top: 5px;
-      border-top: 1px solid #ccc;
-
+#main {
+  .content {
+    .left-side-controls {
+      border-top: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      @include box-shadow($border-shadow);
+      margin-top: 30px;
+      padding-right: 15px;
+      padding-bottom: 15px;
+      width: flex-grid(2, 12);
+      float: left;
       .button{
-        @include button(pill);
+        @include button(shiny);
       }
     }
 
-    table {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      tbody {
-        tr {
-          font-size: 13px;
-          th {
-            font-weight: bold;
-            text-align: left;
+    ul.c-list {
+      width: flex-grid(9, 12);
+      float: left;
+      list-style:none;
+      padding-left: 0px;
+      border: 2px solid $border-color;
+      background-color: #ffffff;
+      @include border-radius(5px);
+      @include box-shadow($border-shadow);
+
+      li {
+        background-color: #ececec;
+        @include inline-block;
+        width: 205px;
+        vertical-align:top;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        margin-top: 25px;
+        padding: 10px;
+        border: 1px solid $border-color;
+        @include border-radius(5px);
+
+        .cell-top {
+          background: darken($bg-default, 20%);
+          font-weight: bold;
+          font-size: 14px;
+          text-align: center;
+          @include clearfix;
+          border-bottom: 1px solid #ccc;
+          @include border-top-left-radius(5px);
+          @include border-top-right-radius(5px);
+        }
+
+        .cell-bottom {
+          display: none;
+          @include clearfix;
+          padding-top: 5px;
+          border-top: 1px solid #ccc;
+
+          .button{
+            @include button(pill);
           }
-          td {
-            width: 100%;
-            background: #ffffff;
-            padding-left: 5px;
-            border: 1px solid $border-color;
-            @include border-radius(5px);
+        }
+
+        table {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          tbody {
+            tr {
+              font-size: 13px;
+              th {
+                font-weight: bold;
+                text-align: left;
+              }
+              td {
+                width: 100%;
+                background: #ffffff;
+                padding-left: 5px;
+                border: 1px solid $border-color;
+                @include border-radius(5px);
+              }
+            }
           }
         }
       }
+
+      li:hover {
+        cursor: pointer;
+        background: #ececec;
+      }
     }
   }
-
-  li:hover {
-    cursor: pointer;
-    background: #ececec;
-  }
 }
+
 .ui-datepicker {
   display:none;
   background-color: $bg-default;
