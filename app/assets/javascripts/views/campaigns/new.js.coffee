@@ -3,11 +3,13 @@ class Tapp.Views.CampaignsNew extends Backbone.View
   template: JST['campaigns/new']
 
   events:
-    "click .add-country": "addCountrySelector"
+    "click .country": "addCountry"
     "click #save_campaign": "saveCampaign"
 
-  render: =>
+  render: ->
     @$el.html(@template(brands: @brands.models))
+    @$el.find(".datetime").datepicker()
+    @$el.find(".datetime").datepicker "option", "dateFormat", "dd/mm/yy"
     @
 
   initialize: ->
@@ -17,21 +19,29 @@ class Tapp.Views.CampaignsNew extends Backbone.View
 
     @brands.on "all", @render, this
 
-  addCountrySelector: ->
+  addCountry: ->
     view = new Tapp.Views.CampaignsCountries()
-    @$("form").find(".countries-languages")
-      .append(view.render().el)
+    @$("form").find(".actions").before(view.render().el)
     false
 
-  saveCampaign: (e) ->
+  saveCampaign: () ->
     form = @$("form")
-    countries = ViewsHelpers.serializeCountriesObject(form)
     attributes =
       brand_id: @$("#brand_id").val()
       start_from_date: @$("#start_from_date").val()
       end_date: @$("#end_date").val()
-      countries: countries
-    if @collection.create attributes
-      @router.navigate "#campaigns", trigger: true
-    else
-      @$el.find("#flashes").append("Something went wrong!")
+    if @model = @collection.create attributes
+      countriesAttributes = []
+      cGroups = form.find(".input-group.c")
+      _.each cGroups, (group, index) ->
+        obj =
+          campaign_id: @model.id
+          name: $(group).find(".country_name").val()
+          languages: new Array( $(group).find(".country_languages").val() )
+        countriesAttributes.push obj
+      console.log countriesAttributes
+      @countries = new Tapp.Collections.Countries(countriesAttributes)
+      if @model.save countries: @countries.models
+        @router.navigate "#campaigns", trigger: true
+      else
+        @$el.find("#flashes").append("Something went wrong!")

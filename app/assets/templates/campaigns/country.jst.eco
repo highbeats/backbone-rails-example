@@ -1,0 +1,7 @@
+
+<div class="input-group"><label>Country name<label>
+<input type="text" class= "country_name" />
+</div>
+<div class="input-group"><label>List of languages</label>
+<input type="text" class= "country_languages" />
+</div>

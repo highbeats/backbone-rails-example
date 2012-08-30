@@ -20,12 +20,12 @@ class Tapp.Routers.Campaigns extends Backbone.Router
     view.render()
 
   new: ->
-    view = new Tapp.Views.CampaignsNew
+    @view = new Tapp.Views.CampaignsNew
       el: $(".content"),
       brands: @brands,
       collection: @campaigns,
       router: @
-    view.render()
+    @view.render()
 
   edit: (id) ->
     @campaign = @campaigns.get(id)

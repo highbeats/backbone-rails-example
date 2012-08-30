@@ -20,17 +20,13 @@
   </div>
 
   <div class="input-group">
-    <label for="end_time">Upto </label>
+    <label for="end_time">To:</label>
     <input class="datetime" id="end_date" type="date"><br/>
   </div>
-
-  <div class="block">
-    <a href="#" class="add-country" id="clb">Add country</a><br/>
+  <div class="input-group">
+    <a class="button country" style="float:right;">+ Country options</a>
   </div>
-  <div class="countries-languages block"> </div>
-</div>
   <div class="actions">
-   
     <input type="submit" value="Save" id="save_campaign" class="button">
   </div>
 

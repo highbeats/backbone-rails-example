@@ -86,13 +86,17 @@ ul.c-list {
     background: #ececec;
   }
 }
-
+.ui-datepicker {
+  display:none;
+  background-color: $bg-default;
+  border: 1px solid black;
+}
 // new form
 
 .new-campaign-wrap {
   h6 {
     padding-top: 15px;
-    padding-left: 30px;
+    padding-left: 10px;
     padding-right: 10px;
     height: 36px;
     @include linear-gradient(#3585de, #001576);
@@ -103,7 +107,7 @@ ul.c-list {
     @include border-top-radius(5px);
     
     a {
-      @include button(pill, #ececec);
+      @include button(pill, #fff);
       float: right;
     }
   }
@@ -122,6 +126,9 @@ ul.c-list {
       padding: 10px;
 
       .input-group {
+        label {
+          font-weight: bold;
+        }
         margin-bottom: 7px;
         @include clearfix;
         #{$all-text-inputs} {
@@ -130,17 +137,35 @@ ul.c-list {
           float: right;
           border: 1px solid $border-color;
           @include border-radius(3px);
+          background-color: lighten($bg-default, 30%);
         }
 
         select {
-          height: 20px;
+          height: 27px;
           width: 70%;
           float: right;
+          background-color: lighten($bg-default, 30%);
+          border: 1px solid $border-color;
+          @include border-radius(3px);
+        }
+        &.c {
+          label {
+            font-size: 11px;
+            font-weight: none;
+          }
+          border: 1px solid $border-color;
+          padding:5px;
         }
       }
     }
 
     .actions {
+      @include clearfix;
+      margin-top: 10px;
+      padding: 10px;
+      border-top: 1px solid $border-color;
+      @include box-shadow($border-shadow);
+
       .button {
         @include button(shiny);
       }
