@@ -13,6 +13,7 @@ class Tapp.Views.CampaignsNew extends Backbone.View
     @
 
   initialize: ->
+    @el = @options.el
     @collection = @options.collection
     @brands = @options.brands
     @router = @options.router

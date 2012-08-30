@@ -28,7 +28,7 @@ gem 'bourbon'
 
 group :development, :test  do
   gem 'rspec-rails'
-  gem 'jasmine'
+  gem 'jasminerice'
 end
 
 group :test do
