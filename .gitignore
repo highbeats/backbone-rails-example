@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/.sass-cache
+/app/.sass-cache
+/app/assets/.sass-cache
+/app/assets/stylesheets/.sass-cache
