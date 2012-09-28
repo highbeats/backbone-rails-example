@@ -25,7 +25,8 @@ class Tapp.Views.CampaignsNew extends Backbone.View
     @$("form").find(".actions").before(view.render().el)
     false
 
-  saveCampaign: () ->
+  saveCampaign: (e) ->
+    e.preventDefault()
     form = @$("form")
     attributes =
       brand_id: @$("#brand_id").val()
@@ -36,7 +37,6 @@ class Tapp.Views.CampaignsNew extends Backbone.View
       cGroups = form.find(".input-group.c")
       _.each cGroups, (group, index) ->
         obj =
-          campaign_id: @model.id
           name: $(group).find(".country_name").val()
           languages: new Array( $(group).find(".country_languages").val() )
         countriesAttributes.push obj
