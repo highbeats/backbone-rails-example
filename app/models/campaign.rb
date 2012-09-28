@@ -2,9 +2,10 @@ class Campaign < ActiveRecord::Base
   attr_accessible :brand_id, :brand_name, :countries, :end_date, :start_from_date
   belongs_to :brand
 
-  serialize :countries, JSON
+  delegate :name, to: :brand, prefix: true
+  delegate :to_json, :to_csv, :to_xml, to: :converter
 
-  attr_accessor :brand_name
+  serialize :countries, JSON
 
   def as_json(options={})
     {
@@ -17,7 +18,7 @@ class Campaign < ActiveRecord::Base
     }
   end
 
-  def brand_name
-    brand.name if brand.present?
+  def converter
+    CampaignConverter.new(self)
   end
 end
